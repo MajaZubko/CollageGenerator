@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import unsplash from '../api/unsplash';
 import SearchBar from './SearchBar';
+import ExportBtns from './ExportBtns';
 import ImageList from './ImageList';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
 	return (
 		<div className="wrapper">
 			<SearchBar onSubmit={onSearchSubmit} />
+			<ExportBtns />
 			<ImageList images={images} />
 		</div>
 	);
