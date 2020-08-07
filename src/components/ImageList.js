@@ -1,4 +1,6 @@
 import React from 'react';
+import Masonry from 'react-masonry-css';
+
 import ImageCard from './ImageCard';
 
 const ImageList = (props) => {
@@ -6,7 +8,11 @@ const ImageList = (props) => {
 		return <ImageCard key={image.id} image={image} />;
 	});
 
-	return <div className="image-list">{images}</div>;
+	return (
+		<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+			{images}
+		</Masonry>
+	);
 };
 
 export default ImageList;
