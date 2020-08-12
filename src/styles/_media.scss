@@ -1,26 +1,52 @@
 @media screen and (max-width: $wide-mobile) {
-	.search-bar {
+	.search-area {
 		width: 64vw;
 		margin: 20px 12vw;
+		.search-bar {
+			margin: 0 9vw;
+			.field {
+				flex-direction: column;
+				align-items: center;
+				text-align: center;
 
-		.field {
-			flex-direction: column;
-			align-items: center;
-			text-align: center;
+				label {
+					margin: 0;
+				}
 
-			label {
-				margin: 0;
+				input {
+					margin-top: 12px;
+					width: 45vw;
+				}
 			}
+		}
 
-			input {
-				margin-top: 12px;
-				width: 45vw;
-			}
+		.filters-all {
+			margin: 0 8vw;
 		}
 	}
 }
 
 @media screen and (max-width: $medium-mobile) {
+	.filters-all {
+		form {
+			grid-template-columns: 1fr 1fr;
+		}
+
+		.dropdown-all {
+			grid-column: span 2;
+		}
+
+		.fetch-btn,
+		.submit-btn {
+			grid-column: span 1;
+			margin-top: 8px;
+		}
+	}
+
+	.dropdown-all {
+		width: 45vw;
+	}
+
 	.export-btns {
 		display: flex;
 		flex-direction: column;
@@ -29,6 +55,18 @@
 }
 
 @media screen and (max-width: $narrow-mobile) {
+	.filters-all {
+		form {
+			grid-template-columns: 1fr;
+		}
+
+		.dropdown-all,
+		.fetch-btn,
+		.submit-btn {
+			grid-column: span 1;
+		}
+	}
+
 	.export-btns {
 		right: 4vw;
 
@@ -44,6 +82,10 @@
 	}
 
 	.export-btns {
+		display: none;
+	}
+
+	.search-area {
 		display: none;
 	}
 

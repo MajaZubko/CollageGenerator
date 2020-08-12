@@ -15,7 +15,7 @@ button {
 
 .dropdown-all {
   background-color: #ececec;
-  width: 25vw;
+  width: 15vw;
   margin: 5px 10px;
   border-radius: 5px;
 }
@@ -29,6 +29,9 @@ button {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  cursor: pointer;
+  border: 1px solid #c9c9c9;
+  border-radius: 3px;
 }
 
 .dropdown-all .dropdown-bar .menu {
@@ -36,11 +39,63 @@ button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 25vw;
+  width: 15vw;
 }
 
 .dropdown-all .dropdown-bar .menu .item:hover {
   background-color: #c9c9c9;
+}
+
+.dropdown-all .dropdown-bar .text,
+.dropdown-all .dropdown-bar .item {
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+.filters-all {
+  margin: 0 20px;
+}
+
+.filters-all button {
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: transparent;
+  font-size: 0.9rem;
+}
+
+.filters-all button:hover {
+  background-color: #c9c9c9;
+}
+
+.filters-all button i {
+  margin-right: 5px;
+}
+
+.filters-all .label {
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.filters-all form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.filters-all form.hidden {
+  display: none;
+}
+
+.filters-all .fetch-btn {
+  margin-top: 16px;
+}
+
+.filters-all .submit-btn {
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 1;
+  grid-column: 3/4;
 }
 
 .my-masonry-grid {
@@ -87,27 +142,10 @@ button {
           transform: scale(1.2);
 }
 
-.search-bar {
-  border: 1px solid lightgray;
-  width: 50vw;
-  padding: 10px;
-  margin: 20px 25vw;
-  border-radius: 10px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  background-color: #ececec;
-  -webkit-box-shadow: 0 0 2px 0 #ececec;
-          box-shadow: 0 0 2px 0 #ececec;
-}
-
 .search-bar .field {
   margin-top: 8px;
   padding: 5px;
-  width: 45vw;
+  width: 44vw;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -121,7 +159,7 @@ button {
 }
 
 .search-bar .field input {
-  width: 25vw;
+  width: 20vw;
   border: 1px solid lightgray;
   border-radius: 5px;
   height: 25px;
@@ -132,12 +170,31 @@ button {
   background-color: #ececec;
 }
 
+.search-area {
+  border: 1px solid lightgray;
+  width: 50vw;
+  padding: 10px;
+  margin: 20px 25vw;
+  border-radius: 10px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  align: center;
+  background-color: #ececec;
+  -webkit-box-shadow: 0 0 2px 0 #ececec;
+          box-shadow: 0 0 2px 0 #ececec;
+}
+
 @media screen and (max-width: 1088px) {
-  .search-bar {
+  .search-area {
     width: 64vw;
     margin: 20px 12vw;
   }
-  .search-bar .field {
+  .search-area .search-bar {
+    margin: 0 9vw;
+  }
+  .search-area .search-bar .field {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -147,16 +204,34 @@ button {
             align-items: center;
     text-align: center;
   }
-  .search-bar .field label {
+  .search-area .search-bar .field label {
     margin: 0;
   }
-  .search-bar .field input {
+  .search-area .search-bar .field input {
     margin-top: 12px;
     width: 45vw;
+  }
+  .search-area .filters-all {
+    margin: 0 8vw;
   }
 }
 
 @media screen and (max-width: 650px) {
+  .filters-all form {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  .filters-all .dropdown-all {
+    grid-column: span 2;
+  }
+  .filters-all .fetch-btn,
+  .filters-all .submit-btn {
+    grid-column: span 1;
+    margin-top: 8px;
+  }
+  .dropdown-all {
+    width: 45vw;
+  }
   .export-btns {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -170,6 +245,15 @@ button {
 }
 
 @media screen and (max-width: 420px) {
+  .filters-all form {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .filters-all .dropdown-all,
+  .filters-all .fetch-btn,
+  .filters-all .submit-btn {
+    grid-column: span 1;
+  }
   .export-btns {
     right: 4vw;
   }
@@ -183,6 +267,9 @@ button {
     display: none;
   }
   .export-btns {
+    display: none;
+  }
+  .search-area {
     display: none;
   }
   .image-list img {

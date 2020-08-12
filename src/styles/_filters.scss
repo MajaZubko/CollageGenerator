@@ -1,0 +1,41 @@
+.filters-all {
+	margin: 0 20px;
+
+	button {
+		border: none;
+		border-radius: 3px;
+		outline: none;
+		background-color: transparent;
+		font-size: 0.9rem;
+
+		&:hover {
+			background-color: $light-gray;
+		}
+
+		i {
+			margin-right: 5px;
+		}
+	}
+
+	.label {
+		font-weight: 700;
+		font-size: 0.9rem;
+	}
+
+	form {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	.fetch-btn {
+		margin-top: 16px;
+	}
+
+	.submit-btn {
+		grid-column: 3/4;
+	}
+}

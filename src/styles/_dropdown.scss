@@ -1,6 +1,6 @@
 .dropdown-all {
 	background-color: $off-white;
-	width: 25vw;
+	width: 15vw;
 	margin: 5px 10px;
 	border-radius: 5px;
 
@@ -8,13 +8,22 @@
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
+		cursor: pointer;
+		border: 1px solid $light-gray;
+		border-radius: 3px;
 		.menu {
 			flex-direction: column;
-			width: 25vw;
+			width: 15vw;
 
 			.item:hover {
 				background-color: $light-gray;
 			}
+		}
+
+		.text,
+		.item {
+			font-size: 0.9rem;
+			margin-left: 5px;
 		}
 	}
 }

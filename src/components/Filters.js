@@ -75,10 +75,10 @@ const Filters = (props) => {
 						selected={orientationSelected}
 						onSelectedChange={setOrientationSelected}
 					/>
-					<button onClick={fetchNextBatch}>
+					<button onClick={fetchNextBatch} className="fetch-btn">
 						<i className="fas fa-sync-alt" /> Fetch next batch
 					</button>
-					<button type="submit">
+					<button className="submit-btn" type="submit">
 						<i className="fas fa-check" />
 						Apply
 					</button>
