@@ -5,7 +5,7 @@ const SearchBar = (props) => {
 
 	const onFormSubmit = (event) => {
 		event.preventDefault();
-		props.onSubmit(term);
+		props.catchTerm(term);
 	};
 
 	return (

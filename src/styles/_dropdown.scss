@@ -1,0 +1,20 @@
+.dropdown-all {
+	background-color: $off-white;
+	width: 25vw;
+	margin: 5px 10px;
+	border-radius: 5px;
+
+	.dropdown-bar {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		.menu {
+			flex-direction: column;
+			width: 25vw;
+
+			.item:hover {
+				background-color: $light-gray;
+			}
+		}
+	}
+}

@@ -12,9 +12,9 @@ const App = () => {
 		const response = await unsplash.get('search/photos', {
 			params: {
 				query: term,
-				per_page: per_page,
-				orientation: orientation,
-				page: page
+				per_page,
+				orientation,
+				page
 			}
 		});
 		setImages(response.data.results);

@@ -13,6 +13,36 @@ button {
   cursor: pointer;
 }
 
+.dropdown-all {
+  background-color: #ececec;
+  width: 25vw;
+  margin: 5px 10px;
+  border-radius: 5px;
+}
+
+.dropdown-all .dropdown-bar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.dropdown-all .dropdown-bar .menu {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 25vw;
+}
+
+.dropdown-all .dropdown-bar .menu .item:hover {
+  background-color: #c9c9c9;
+}
+
 .my-masonry-grid {
   display: -webkit-box;
   display: -ms-flexbox;
