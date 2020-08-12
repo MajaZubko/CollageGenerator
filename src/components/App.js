@@ -1,27 +1,33 @@
 import React, { useState } from 'react';
+
 import unsplash from '../api/unsplash';
-import SearchBar from './SearchBar';
+import SearchArea from './SearchArea';
 import ExportBtns from './ExportBtns';
 import ImageList from './ImageList';
 
 const App = () => {
 	const [ images, setImages ] = useState([]);
 
-	const onSearchSubmit = async (term) => {
+	const onSearchSubmit = async (term, per_page = 9, orientation = 'portrait', page = 1) => {
 		const response = await unsplash.get('search/photos', {
 			params: {
-				query: term
+				query: term,
+				per_page: per_page,
+				orientation: orientation,
+				page: page
 			}
 		});
 		setImages(response.data.results);
 	};
 
 	return (
-		<div className="wrapper">
-			<SearchBar onSubmit={onSearchSubmit} />
-			<ExportBtns />
-			<ImageList images={images} />
-		</div>
+		<React.Fragment>
+			<div className="wrapper">
+				<SearchArea onSubmit={onSearchSubmit} />
+				<ExportBtns />
+				<ImageList images={images} />
+			</div>
+		</React.Fragment>
 	);
 };
 

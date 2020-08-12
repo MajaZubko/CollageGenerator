@@ -9,9 +9,11 @@ const ImageList = (props) => {
 	});
 
 	return (
-		<Masonry breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
-			{images}
-		</Masonry>
+		<div id="image-list">
+			<Masonry id="list" breakpointCols={3} className="my-masonry-grid" columnClassName="my-masonry-grid_column">
+				{images}
+			</Masonry>
+		</div>
 	);
 };
 

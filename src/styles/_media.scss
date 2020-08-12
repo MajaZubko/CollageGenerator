@@ -1,3 +1,43 @@
+@media screen and (max-width: $wide-mobile) {
+	.search-bar {
+		width: 64vw;
+		margin: 20px 12vw;
+
+		.field {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+
+			label {
+				margin: 0;
+			}
+
+			input {
+				margin-top: 12px;
+				width: 45vw;
+			}
+		}
+	}
+}
+
+@media screen and (max-width: $medium-mobile) {
+	.export-btns {
+		display: flex;
+		flex-direction: column;
+		right: 5vw;
+	}
+}
+
+@media screen and (max-width: $narrow-mobile) {
+	.export-btns {
+		right: 4vw;
+
+		button {
+			margin-right: 0;
+		}
+	}
+}
+
 @media print {
 	.search-bar {
 		display: none;
