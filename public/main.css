@@ -224,6 +224,9 @@ button {
   .filters-all .dropdown-all {
     grid-column: span 2;
   }
+  .filters-all .dropdown-all .menu {
+    width: 45vw;
+  }
   .filters-all .fetch-btn,
   .filters-all .submit-btn {
     grid-column: span 1;
